@@ -541,30 +541,10 @@ const funFacts = [
 ];
 
 // Daily updates - simulated (replace with real API)
-const getLatestAINews = () => {
-    const updates = [
-        "OpenAI releases GPT-4.5 with enhanced reasoning capabilities and reduced hallucinations",
-        "Meta announces LLaMA 3 - open source model rivaling proprietary alternatives",
-        "Google DeepMind's Gemini Ultra achieves human-expert performance on MMLU benchmark",
-        "Anthropic introduces Claude 3 Opus with 200K context window",
-        "Mistral AI releases Mixtral 8x22B - largest open-source MoE model",
-        "Microsoft integrates GPT-4 into Office suite",
-        "Stability AI launches Stable Diffusion XL 2.0",
-        "Research breakthrough: New training method reduces LLM compute by 40%",
-        "AI safety milestone: Constitutional AI reduces harmful outputs by 75%",
-        "Local LLM revolution: New quantization enables GPT-4 class models on consumer GPUs"
-    ];
-    
-    const randomUpdate = updates[Math.floor(Math.random() * updates.length)];
-    const today = new Date().toLocaleDateString('en-US', { 
-        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' 
-    });
-    
-    return {
-        text: randomUpdate,
-        date: today
-    };
-};
+function getLatestAINews() {
+    const item = aiUpdates[Math.floor(Math.random() * aiUpdates.length)];
+    return { text: item.title + ' \u2014 ' + item.text, date: item.date };
+}
 
 // ============================================
 // AI GLOSSARY — quick-reference terms

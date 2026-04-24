@@ -603,4 +603,50 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+function exportProgress() {
+    const data = {
+        version: 1,
+        exportedAt: new Date().toISOString(),
+        progress: localStorage.getItem('aiLearningProgress'),
+        bookmarks: localStorage.getItem('aiLearningBookmarks'),
+    };
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'ai-learning-progress-' + new Date().toISOString().slice(0,10) + '.json';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('Progress exported!');
+}
+
+function importProgress() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = (ev) => {
+            try {
+                const data = JSON.parse(ev.target.result);
+                if (data.version !== 1) throw new Error('Unknown format');
+                if (data.progress) localStorage.setItem('aiLearningProgress', data.progress);
+                if (data.bookmarks) localStorage.setItem('aiLearningBookmarks', data.bookmarks);
+                loadProgress();
+                loadBookmarks();
+                updateHeroStats();
+                updateProgress();
+                renderTopics();
+                showToast('\u2713 Progress imported!');
+            } catch (err) {
+                showToast('Import failed: invalid file');
+            }
+        };
+        reader.readAsText(file);
+    };
+    input.click();
+}
+
 window.addEventListener('error', (e) => console.error('Application error:', e.error));
