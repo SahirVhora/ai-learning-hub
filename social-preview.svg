@@ -1,0 +1,233 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <!-- Deep dark background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0f1a"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+
+    <!-- Accent glow for main orb -->
+    <radialGradient id="orb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.35"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Secondary purple glow -->
+    <radialGradient id="orb2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:0.25"/>
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Card gradient -->
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:0.07"/>
+      <stop offset="100%" style="stop-color:#ffffff;stop-opacity:0.02"/>
+    </linearGradient>
+
+    <!-- Title gradient -->
+    <linearGradient id="titleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#60a5fa"/>
+      <stop offset="50%" style="stop-color:#a78bfa"/>
+      <stop offset="100%" style="stop-color:#34d399"/>
+    </linearGradient>
+
+    <!-- Brain icon glow -->
+    <radialGradient id="brainGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.8"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Grid fade mask -->
+    <radialGradient id="gridMask" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:white;stop-opacity:0.08"/>
+      <stop offset="100%" style="stop-color:white;stop-opacity:0"/>
+    </radialGradient>
+
+    <!-- Pill gradient -->
+    <linearGradient id="pillGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1d4ed8;stop-opacity:0.5"/>
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:0.5"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- Perspective grid lines (horizontal) -->
+  <g opacity="0.12">
+    <line x1="0" y1="420" x2="1280" y2="420" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="460" x2="1280" y2="460" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="500" x2="1280" y2="500" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="540" x2="1280" y2="540" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="580" x2="1280" y2="580" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="0" y1="620" x2="1280" y2="620" stroke="#3b82f6" stroke-width="0.5"/>
+  </g>
+  <!-- Perspective grid lines (vertical converging) -->
+  <g opacity="0.08">
+    <line x1="640" y1="380" x2="0" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="128" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="256" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="384" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="512" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="640" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="768" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="896" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="1024" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="1152" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+    <line x1="640" y1="380" x2="1280" y2="640" stroke="#3b82f6" stroke-width="0.5"/>
+  </g>
+
+  <!-- Main blue orb glow left-center -->
+  <ellipse cx="320" cy="300" rx="340" ry="300" fill="url(#orb)"/>
+  <!-- Purple orb glow right -->
+  <ellipse cx="1050" cy="260" rx="280" ry="260" fill="url(#orb2)"/>
+
+  <!-- Decorative floating dots / stars -->
+  <circle cx="80" cy="80" r="2" fill="#60a5fa" opacity="0.6"/>
+  <circle cx="200" cy="140" r="1.5" fill="#a78bfa" opacity="0.5"/>
+  <circle cx="1100" cy="90" r="2" fill="#34d399" opacity="0.6"/>
+  <circle cx="1200" cy="50" r="1.5" fill="#60a5fa" opacity="0.5"/>
+  <circle cx="950" cy="160" r="2" fill="#a78bfa" opacity="0.5"/>
+  <circle cx="60" cy="500" r="1.5" fill="#34d399" opacity="0.4"/>
+  <circle cx="1240" cy="430" r="2" fill="#60a5fa" opacity="0.4"/>
+  <circle cx="440" cy="60" r="1.5" fill="#34d399" opacity="0.4"/>
+  <circle cx="820" cy="100" r="2" fill="#a78bfa" opacity="0.5"/>
+
+  <!-- Neural network node art - right side decorative -->
+  <g opacity="0.18" stroke="#60a5fa" stroke-width="1" fill="none">
+    <!-- Nodes -->
+    <circle cx="940" cy="130" r="5" fill="#60a5fa" opacity="0.6"/>
+    <circle cx="1010" cy="90" r="4" fill="#a78bfa" opacity="0.6"/>
+    <circle cx="1080" cy="150" r="5" fill="#60a5fa" opacity="0.6"/>
+    <circle cx="1000" cy="200" r="4" fill="#34d399" opacity="0.6"/>
+    <circle cx="1120" cy="220" r="5" fill="#a78bfa" opacity="0.6"/>
+    <circle cx="1160" cy="120" r="4" fill="#60a5fa" opacity="0.6"/>
+    <circle cx="1200" cy="190" r="4" fill="#34d399" opacity="0.6"/>
+    <!-- Connections -->
+    <line x1="940" y1="130" x2="1010" y2="90"/>
+    <line x1="940" y1="130" x2="1000" y2="200"/>
+    <line x1="1010" y1="90" x2="1080" y2="150"/>
+    <line x1="1010" y1="90" x2="1160" y2="120"/>
+    <line x1="1080" y1="150" x2="1000" y2="200"/>
+    <line x1="1080" y1="150" x2="1120" y2="220"/>
+    <line x1="1080" y1="150" x2="1160" y2="120"/>
+    <line x1="1160" y1="120" x2="1200" y2="190"/>
+    <line x1="1120" y1="220" x2="1200" y2="190"/>
+    <line x1="1000" y1="200" x2="1120" y2="220"/>
+  </g>
+
+  <!-- Left-side neural art -->
+  <g opacity="0.12" stroke="#a78bfa" stroke-width="1" fill="none">
+    <circle cx="60" cy="180" r="4" fill="#a78bfa" opacity="0.6"/>
+    <circle cx="130" cy="130" r="4" fill="#60a5fa" opacity="0.6"/>
+    <circle cx="160" cy="210" r="4" fill="#34d399" opacity="0.6"/>
+    <circle cx="100" cy="270" r="4" fill="#a78bfa" opacity="0.6"/>
+    <line x1="60" y1="180" x2="130" y2="130"/>
+    <line x1="130" y1="130" x2="160" y2="210"/>
+    <line x1="60" y1="180" x2="100" y2="270"/>
+    <line x1="160" y1="210" x2="100" y2="270"/>
+  </g>
+
+  <!-- ── MAIN CONTENT CARD ── -->
+  <rect x="120" y="110" width="760" height="360" rx="20" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Top accent line on card -->
+  <rect x="120" y="110" width="760" height="3" rx="1.5" fill="url(#titleGrad)" opacity="0.9"/>
+
+  <!-- Brain / AI icon circle -->
+  <circle cx="210" cy="210" r="48" fill="rgba(59,130,246,0.12)" stroke="rgba(96,165,250,0.3)" stroke-width="1.5"/>
+  <!-- Simple stylized brain icon using paths -->
+  <g transform="translate(186, 186)" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Brain shape simplified -->
+    <path d="M24 8 C18 8 14 12 14 17 C10 17 7 20 7 24 C7 29 11 32 15 32 C15 35 18 38 22 38 L26 38 C30 38 33 35 33 32 C37 32 41 29 41 24 C41 20 38 17 34 17 C34 12 30 8 24 8 Z" stroke="#60a5fa" stroke-width="1.8" fill="rgba(96,165,250,0.08)"/>
+    <line x1="24" y1="8" x2="24" y2="38" stroke="#60a5fa" stroke-width="1.2" opacity="0.5"/>
+    <path d="M14 22 C17 20 21 21 24 23" stroke="#60a5fa" stroke-width="1.2" opacity="0.7"/>
+    <path d="M34 22 C31 20 27 21 24 23" stroke="#60a5fa" stroke-width="1.2" opacity="0.7"/>
+    <path d="M14 28 C17 30 21 29 24 27" stroke="#60a5fa" stroke-width="1.2" opacity="0.7"/>
+    <path d="M34 28 C31 30 27 29 24 27" stroke="#60a5fa" stroke-width="1.2" opacity="0.7"/>
+  </g>
+
+  <!-- Main title -->
+  <text x="278" y="196" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="52" font-weight="800" fill="url(#titleGrad)" letter-spacing="-1">AI Learning Hub</text>
+
+  <!-- Subtitle -->
+  <text x="278" y="234" font-family="'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif" font-size="19" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="0.2">Structured learning paths for AI, LLMs &amp; Agents</text>
+
+  <!-- Divider line -->
+  <line x1="278" y1="254" x2="820" y2="254" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- Stats row -->
+  <!-- Stat 1 -->
+  <g>
+    <text x="278" y="290" font-family="'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#60a5fa">17</text>
+    <text x="278" y="312" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.45)" letter-spacing="0.5">TOPICS</text>
+  </g>
+  <!-- Divider -->
+  <line x1="365" y1="272" x2="365" y2="318" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- Stat 2 -->
+  <g>
+    <text x="385" y="290" font-family="'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#a78bfa">100+</text>
+    <text x="385" y="312" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.45)" letter-spacing="0.5">RESOURCES</text>
+  </g>
+  <!-- Divider -->
+  <line x1="498" y1="272" x2="498" y2="318" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- Stat 3 -->
+  <g>
+    <text x="518" y="290" font-family="'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#34d399">3</text>
+    <text x="518" y="312" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.45)" letter-spacing="0.5">LEARNING PATHS</text>
+  </g>
+  <!-- Divider -->
+  <line x1="654" y1="272" x2="654" y2="318" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <!-- Stat 4 -->
+  <g>
+    <text x="674" y="290" font-family="'Segoe UI', sans-serif" font-size="32" font-weight="700" fill="#f59e0b">0</text>
+    <text x="674" y="312" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="400" fill="rgba(255,255,255,0.45)" letter-spacing="0.5">DEPENDENCIES</text>
+  </g>
+
+  <!-- Divider line -->
+  <line x1="168" y1="338" x2="832" y2="338" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+
+  <!-- Feature pills row -->
+  <!-- Pill 1: Beginner → Expert -->
+  <rect x="168" y="355" width="174" height="34" rx="17" fill="rgba(59,130,246,0.15)" stroke="rgba(96,165,250,0.25)" stroke-width="1"/>
+  <text x="255" y="377" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#93c5fd" text-anchor="middle">🎓 Beginner → Expert</text>
+
+  <!-- Pill 2: Progress Tracking -->
+  <rect x="354" y="355" width="154" height="34" rx="17" fill="rgba(139,92,246,0.15)" stroke="rgba(167,139,250,0.25)" stroke-width="1"/>
+  <text x="431" y="377" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#c4b5fd" text-anchor="middle">📊 Progress Tracking</text>
+
+  <!-- Pill 3: AI Glossary -->
+  <rect x="520" y="355" width="120" height="34" rx="17" fill="rgba(52,211,153,0.12)" stroke="rgba(52,211,153,0.25)" stroke-width="1"/>
+  <text x="580" y="377" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#6ee7b7" text-anchor="middle">📖 AI Glossary</text>
+
+  <!-- Pill 4: Open Source -->
+  <rect x="652" y="355" width="118" height="34" rx="17" fill="rgba(245,158,11,0.12)" stroke="rgba(245,158,11,0.25)" stroke-width="1"/>
+  <text x="711" y="377" font-family="'Segoe UI', sans-serif" font-size="13" font-weight="500" fill="#fcd34d" text-anchor="middle">⚡ Open Source</text>
+
+  <!-- Bottom URL bar -->
+  <rect x="120" y="510" width="760" height="44" rx="10" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.07)" stroke-width="1"/>
+  <text x="500" y="538" font-family="'SF Mono', 'Fira Code', 'Consolas', monospace" font-size="15" fill="rgba(255,255,255,0.35)" text-anchor="middle" letter-spacing="0.5">sahirvhora.github.io/ai-learning-hub</text>
+  <!-- Small dot indicators -->
+  <circle cx="148" cy="532" r="5" fill="#ef4444" opacity="0.7"/>
+  <circle cx="166" cy="532" r="5" fill="#f59e0b" opacity="0.7"/>
+  <circle cx="184" cy="532" r="5" fill="#34d399" opacity="0.7"/>
+
+  <!-- Topics label -->
+  <text x="500" y="490" font-family="'Segoe UI', sans-serif" font-size="13" fill="rgba(255,255,255,0.25)" text-anchor="middle" letter-spacing="1.5">RAG · LLMs · Agents · Transformers · Fine-tuning · Prompting · MoE · Embeddings</text>
+
+  <!-- GitHub logo watermark top-right -->
+  <g transform="translate(1195, 40)" opacity="0.3" fill="white">
+    <path d="M22.5 0C10.07 0 0 10.07 0 22.5C0 32.45 6.44 40.86 15.37 43.77C16.52 43.98 16.95 43.28 16.95 42.67C16.95 42.12 16.93 40.47 16.92 38.28C10.66 39.67 9.31 35.34 9.31 35.34C8.27 32.8 6.79 32.1 6.79 32.1C4.74 30.71 6.95 30.74 6.95 30.74C9.21 30.9 10.4 33.06 10.4 33.06C12.41 36.43 15.67 35.44 16.99 34.85C17.19 33.4 17.78 32.41 18.42 31.85C13.37 31.28 8.06 29.35 8.06 20.88C8.06 18.46 8.94 16.48 10.44 14.92C10.21 14.35 9.43 12.08 10.66 8.98C10.66 8.98 12.56 8.37 16.89 11.28C18.72 10.78 20.61 10.53 22.5 10.52C24.39 10.53 26.29 10.78 28.12 11.28C32.44 8.37 34.34 8.98 34.34 8.98C35.58 12.08 34.79 14.35 34.56 14.92C36.07 16.48 36.94 18.46 36.94 20.88C36.94 29.37 31.62 31.28 26.55 31.83C27.37 32.52 28.1 33.89 28.1 35.99C28.1 39 28.07 41.42 28.07 42.67C28.07 43.29 28.49 44 29.66 43.77C38.57 40.85 45 32.44 45 22.5C45 10.07 34.93 0 22.5 0Z"/>
+  </g>
+
+</svg>
