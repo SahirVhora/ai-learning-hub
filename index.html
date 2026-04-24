@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Hub — Learn AI, LLMs & Agents from Zero to Expert</title>
+    <meta name="description" content="Structured, curated learning paths for AI, LLMs, agents, RAG, MoE and more. 17 topics, 100+ vetted resources, progress tracking — free and open.">
+    <meta name="theme-color" content="#0071e3">
+    <meta property="og:title" content="AI Learning Hub">
+    <meta property="og:description" content="Structured, curated learning paths for AI, LLMs, agents and more.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#path-selection" class="skip-link">Skip to main content</a>
+
+    <nav class="nav" aria-label="Primary">
+        <div class="nav-content">
+            <a href="#home" class="nav-logo" aria-label="AI Learning Hub — home">
+                <span class="logo-mark" aria-hidden="true">◆</span> AI Learning Hub
+            </a>
+            <div class="nav-search">
+                <input
+                    type="search"
+                    id="global-search"
+                    placeholder="Search topics, resources, concepts…"
+                    autocomplete="off"
+                    aria-label="Search"
+                >
+                <div id="search-results" class="search-results hidden" role="listbox"></div>
+            </div>
+            <div class="nav-links">
+                <a href="#path-selection" class="nav-link active">Learn</a>
+                <a href="#glossary-trigger" class="nav-link" onclick="openGlossary(event)">Glossary</a>
+                <a href="#updates" class="nav-link">Updates</a>
+                <a href="#about" class="nav-link">About</a>
+            </div>
+            <button class="nav-mobile" aria-label="Toggle menu" onclick="toggleMobileNav()">☰</button>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge fade-in">Free · Curated · Updated</div>
+            <h1 class="hero-title fade-in">Learn AI, <span class="grad">end-to-end.</span></h1>
+            <p class="hero-subtitle fade-in-delay">From first principles to cutting-edge research — three guided paths, vetted resources, no fluff.</p>
+            <div class="hero-cta fade-in-delay-2">
+                <button class="cta-button" onclick="scrollToSelection()">Start learning</button>
+                <button class="cta-button cta-ghost" onclick="openGlossary()">Open glossary</button>
+            </div>
+            <div class="hero-stats fade-in-delay-2" aria-label="Platform stats">
+                <div><strong id="stat-topics">17</strong><span>Topics</span></div>
+                <div><strong id="stat-resources">100+</strong><span>Resources</span></div>
+                <div><strong>3</strong><span>Paths</span></div>
+                <div><strong id="stat-completed">0</strong><span>You&rsquo;ve done</span></div>
+            </div>
+        </div>
+        <div class="scroll-indicator" aria-hidden="true">
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <section id="daily-update" class="daily-update hidden">
+        <div class="update-content">
+            <span class="update-badge">TODAY</span>
+            <p class="update-text" id="update-text"></p>
+            <span class="update-date" id="update-date"></span>
+        </div>
+    </section>
+
+    <section id="path-selection" class="path-selection">
+        <div class="section-header">
+            <h2 class="section-title">Choose your path</h2>
+            <p class="section-subtitle">Tailored content based on your experience level</p>
+        </div>
+        <div class="path-cards">
+            <article class="path-card" tabindex="0" role="button" aria-label="Beginner path" onclick="selectPath('beginner')" onkeydown="if(event.key==='Enter')selectPath('beginner')" data-level="beginner">
+                <div class="card-icon">🌱</div>
+                <h3 class="card-title">New to this world</h3>
+                <p class="card-description">Start from the basics. Perfect for first steps into AI.</p>
+                <ul class="card-features">
+                    <li>Fundamental concepts, explained simply</li>
+                    <li>No prior knowledge required</li>
+                    <li>Short, focused lessons</li>
+                    <li>Beginner-friendly resources</li>
+                </ul>
+                <div class="card-meta"><span class="pill">5 topics</span><span class="pill">~90 min</span></div>
+                <div class="card-arrow" aria-hidden="true">→</div>
+            </article>
+
+            <article class="path-card" tabindex="0" role="button" aria-label="Intermediate path" onclick="selectPath('intermediate')" onkeydown="if(event.key==='Enter')selectPath('intermediate')" data-level="intermediate">
+                <div class="card-icon">🚀</div>
+                <h3 class="card-title">Know a bit, want more</h3>
+                <p class="card-description">Deepen your understanding and explore advanced topics.</p>
+                <ul class="card-features">
+                    <li>Build on existing knowledge</li>
+                    <li>Practical implementations</li>
+                    <li>Real-world case studies</li>
+                    <li>Hands-on projects</li>
+                </ul>
+                <div class="card-meta"><span class="pill">6 topics</span><span class="pill">~2.5 hr</span></div>
+                <div class="card-arrow" aria-hidden="true">→</div>
+            </article>
+
+            <article class="path-card" tabindex="0" role="button" aria-label="Expert path" onclick="selectPath('expert')" onkeydown="if(event.key==='Enter')selectPath('expert')" data-level="expert">
+                <div class="card-icon">🎯</div>
+                <h3 class="card-title">Expert &amp; curious</h3>
+                <p class="card-description">Cutting-edge research, emerging trends, deep dives.</p>
+                <ul class="card-features">
+                    <li>Latest research papers</li>
+                    <li>Advanced architectures</li>
+                    <li>Emerging innovations</li>
+                    <li>Expert discussions</li>
+                </ul>
+                <div class="card-meta"><span class="pill">6 topics</span><span class="pill">~3 hr</span></div>
+                <div class="card-arrow" aria-hidden="true">→</div>
+            </article>
+        </div>
+    </section>
+
+    <section id="featured" class="featured">
+        <div class="section-header">
+            <h2 class="section-title">Featured topics</h2>
+            <p class="section-subtitle">A taste of what&rsquo;s inside each path</p>
+        </div>
+        <div class="featured-grid" id="featured-grid"></div>
+    </section>
+
+    <section id="learning-content" class="learning-content hidden">
+        <div class="content-header">
+            <button class="back-button" onclick="goBack()">← Back to paths</button>
+            <h2 class="content-title" id="content-title"></h2>
+            <p class="content-subtitle" id="content-subtitle"></p>
+        </div>
+
+        <div class="progress-tracker">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <span class="progress-text" id="progress-text">0% Complete</span>
+        </div>
+
+        <div class="topic-controls" role="tablist" aria-label="Filter topics">
+            <button class="filter-chip active" data-filter="all" role="tab" aria-selected="true">All</button>
+            <button class="filter-chip" data-filter="todo" role="tab" aria-selected="false">Not started</button>
+            <button class="filter-chip" data-filter="done" role="tab" aria-selected="false">Completed</button>
+            <button class="filter-chip" data-filter="bookmarked" role="tab" aria-selected="false">★ Bookmarked</button>
+        </div>
+
+        <div class="topic-grid" id="topic-grid"></div>
+
+        <div id="empty-state" class="empty-state hidden">
+            <div class="empty-icon">🔎</div>
+            <h3>Nothing here yet</h3>
+            <p>Try a different filter, or pick a topic to get started.</p>
+        </div>
+    </section>
+
+    <section id="updates" class="updates">
+        <div class="section-header">
+            <h2 class="section-title">What&rsquo;s new in AI</h2>
+            <p class="section-subtitle">A rotating snapshot of recent shifts worth knowing</p>
+        </div>
+        <div class="updates-grid" id="updates-grid"></div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="about-inner">
+            <h2 class="section-title">About this hub</h2>
+            <p>
+                AI moves fast, and most &ldquo;learn AI&rdquo; pages are either hype or homework. This hub is the
+                opposite: a calm, structured map of the field, with <strong>handpicked</strong> videos,
+                papers, and tools at each step. No signups, no course drip — just the material that
+                actually teaches the idea.
+            </p>
+            <ul class="about-points">
+                <li>🎯 <strong>Progressive paths</strong> — each topic builds on the last.</li>
+                <li>🔗 <strong>Vetted resources</strong> — every link is chosen for quality, not SEO.</li>
+                <li>💾 <strong>Local progress</strong> — nothing leaves your browser.</li>
+                <li>🆓 <strong>Always free</strong> — open content, open to contributions.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div>© <span id="footer-year"></span> AI Learning Hub · Made for learners</div>
+            <div class="footer-links">
+                <a href="#path-selection">Paths</a>
+                <a href="#glossary-trigger" onclick="openGlossary(event)">Glossary</a>
+                <a href="#about">About</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="topic-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="modal-heading">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close">×</button>
+            <div id="modal-body"></div>
+            <div class="modal-footer">
+                <button class="btn-secondary" id="btn-prev-topic" onclick="navigateTopic(-1)">← Previous</button>
+                <button class="btn-primary" id="btn-mark-complete" onclick="toggleComplete()">Mark complete</button>
+                <button class="btn-secondary" id="btn-next-topic" onclick="navigateTopic(1)">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="glossary-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="glossary-heading">
+        <div class="modal-overlay" onclick="closeGlossary()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeGlossary()" aria-label="Close">×</button>
+            <div class="modal-header">
+                <h2 id="glossary-heading" class="modal-title">📘 AI Glossary</h2>
+                <p class="modal-subtitle">Quick reference for the terms you&rsquo;ll meet most often.</p>
+            </div>
+            <input
+                type="search"
+                id="glossary-search"
+                class="glossary-search"
+                placeholder="Filter terms…"
+                aria-label="Filter glossary"
+            >
+            <div id="glossary-list" class="glossary-list"></div>
+        </div>
+    </div>
+
+    <div id="fun-facts" class="fun-facts">
+        <button class="fun-facts-toggle" onclick="toggleFunFacts()" aria-label="Toggle fun facts">
+            <span aria-hidden="true">💡</span>
+            <span class="toggle-text">Fun Facts</span>
+        </button>
+        <div class="fun-facts-content hidden">
+            <h3>Did You Know?</h3>
+            <div id="fun-facts-list"></div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
