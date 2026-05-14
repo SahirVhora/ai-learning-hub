@@ -7,7 +7,12 @@
     <meta name="description" content="Structured, curated learning paths for AI, LLMs, agents, RAG, MoE and more. 17 topics, 100+ vetted resources, progress tracking — free and open.">
     <meta name="theme-color" content="#0071e3">
     <meta property="og:title" content="AI Learning Hub">
-    <meta property="og:description" content="Structured, curated learning paths for AI, LLMs, agents and more.">
+    <meta property="og:image" content="https://sahirvhora.github.io/ai-learning-hub/preview.svg">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="640">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://sahirvhora.github.io/ai-learning-hub/preview.svg">
+<meta property="og:description" content="Structured, curated learning paths for AI, LLMs, agents and more.">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="styles.css">
@@ -48,12 +53,16 @@
             <div class="hero-cta fade-in-delay-2">
                 <button class="cta-button" onclick="scrollToSelection()">Start learning</button>
                 <button class="cta-button cta-ghost" onclick="openGlossary()">Open glossary</button>
+                <button class="cta-button cta-ghost" onclick="openLeaderboard()">📊 Quiz leaderboard</button>
+                <button class="cta-button cta-ghost" onclick="openStudyPlan()">📋 Study plan</button>
             </div>
             <div class="hero-stats fade-in-delay-2" aria-label="Platform stats">
                 <div><strong id="stat-topics">17</strong><span>Topics</span></div>
                 <div><strong id="stat-resources">100+</strong><span>Resources</span></div>
                 <div><strong>3</strong><span>Paths</span></div>
                 <div><strong id="stat-completed">0</strong><span>You&rsquo;ve done</span></div>
+                <div><strong id="stat-quizzes">0</strong><span>Quizzes done</span></div>
+                <div><strong id="stat-streak">0</strong><span>Day streak</span></div>
             </div>
         </div>
         <div class="scroll-indicator" aria-hidden="true">
@@ -211,6 +220,30 @@
         </div>
     </div>
 
+    <div id="study-plan-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="study-plan-heading">
+        <div class="modal-overlay" onclick="closeStudyPlan()"></div>
+        <div class="modal-content study-plan-modal-content">
+            <button class="modal-close" onclick="closeStudyPlan()" aria-label="Close">×</button>
+            <div class="modal-header">
+                <h2 id="study-plan-heading" class="modal-title">📋 Your Study Plan</h2>
+                <p class="modal-subtitle">Top 3 topics to study next, ranked by where you need the most improvement vs the community average.</p>
+            </div>
+            <div id="study-plan-body"></div>
+        </div>
+    </div>
+
+    <div id="leaderboard-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="leaderboard-heading">
+        <div class="modal-overlay" onclick="closeLeaderboard()"></div>
+        <div class="modal-content leaderboard-modal-content">
+            <button class="modal-close" onclick="closeLeaderboard()" aria-label="Close">×</button>
+            <div class="modal-header">
+                <h2 id="leaderboard-heading" class="modal-title">📊 Quiz Leaderboard</h2>
+                <p class="modal-subtitle">Your quiz scores across all topics — see where you shine and where to improve.</p>
+            </div>
+            <div id="leaderboard-body"></div>
+        </div>
+    </div>
+
     <div id="glossary-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="glossary-heading">
         <div class="modal-overlay" onclick="closeGlossary()"></div>
         <div class="modal-content">
@@ -243,7 +276,9 @@
 
     <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <script src="data.js"></script>
     <script src="app.js"></script>
+  <script src="../../personal-command-center/shared-nav.js"></script>
 </body>
 </html>
