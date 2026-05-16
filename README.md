@@ -57,3 +57,7 @@ Spotted a broken link? Found a better resource? Open an issue or a PR — `data.
 ## License
 
 [MIT](./LICENSE) — free to use, fork, remix.
+
+## Content Review
+
+See [docs/content-review.md](docs/content-review.md) for the review cadence and resource acceptance rules. A scheduled GitHub Actions link check now helps catch broken resources before the hub goes stale.
