@@ -69,7 +69,7 @@ const learningData = {
                         { question: "Who coined the term 'Machine Learning'?", options: ["Geoffrey Hinton", "Arthur Samuel", "Alan Turing", "Yann LeCun"], correct: 1, explanation: "Arthur Samuel coined the term 'Machine Learning' in 1959." },
                         { question: "What are the three main types of Machine Learning?", options: ["Binary, Ternary, Quaternary", "Supervised, Unsupervised, Reinforcement", "Static, Dynamic, Hybrid", "Linear, Non-linear, Random"], correct: 1, explanation: "The three main types are Supervised, Unsupervised, and Reinforcement Learning." },
                         { question: "Which everyday technology is powered by machine learning?", options: ["A wooden ruler", "A mechanical stopwatch", "Spam filters and recommendation systems", "A paper notebook"], correct: 2, explanation: "Spam filters, image recognition, and recommendation systems are common ML applications." },
-                        { question: "What is a key requirement for effective machine learning?", options: ["No data needed", "Quality data", "Human intervention for every prediction", "A physical robot"], correct: 1, explanation: "ML requires quality data to produce quality results — the model learns patterns from the data." }
+                        { question: "What is a key requirement for effective machine learning?", options: ["No data needed", "Quality data", "Human intervention for every prediction", "A physical robot"], correct: 1, explanation: "ML requires quality data to produce quality results - the model learns patterns from the data." }
                     ],
                     history: [
                         { year: "1959", event: "Arthur Samuel coins the term 'Machine Learning'" },
@@ -320,7 +320,7 @@ const learningData = {
                     ],
                     quiz: [
                         { question: "What is LangChain primarily used for?", options: ["Video editing", "Building LLM-powered applications with chains and agents", "Database administration", "Graphic design"], correct: 1, explanation: "LangChain simplifies building complex LLM applications with abstractions for prompts, memory, and chains." },
-                        { question: "What does 'RAG' stand for in the context of LLM frameworks?", options: ["Random Access Generator", "Retrieval-Augmented Generation", "Recursive Algorithm Group", "Reactive Agent Grid"], correct: 1, explanation: "RAG stands for Retrieval-Augmented Generation — fetching relevant documents to enhance LLM responses." },
+                        { question: "What does 'RAG' stand for in the context of LLM frameworks?", options: ["Random Access Generator", "Retrieval-Augmented Generation", "Recursive Algorithm Group", "Reactive Agent Grid"], correct: 1, explanation: "RAG stands for Retrieval-Augmented Generation - fetching relevant documents to enhance LLM responses." },
                         { question: "Which of these is a LangChain alternative for data retrieval?", options: ["Photoshop", "LlamaIndex", "AutoCAD", "Slack"], correct: 1, explanation: "LlamaIndex is a popular alternative to LangChain, focused on data indexing and retrieval." },
                         { question: "What capability does LangChain provide for agent workflows?", options: ["Tool use and memory management", "Hardware manufacturing", "Network cabling", "Financial auditing"], correct: 0, explanation: "LangChain supports agents, RAG, tool use, and memory management for complex LLM workflows." }
                     ],
@@ -427,7 +427,7 @@ const learningData = {
                         { type: "Course", name: "Advanced RAG Techniques", url: "https://www.deeplearning.ai/short-courses/", provider: "DeepLearning.AI" }
                     ],
                     quiz: [
-                        { question: "What does RAG stand for?", options: ["Random Algorithm Generation", "Retrieval-Augmented Generation", "Recursive Action Grid", "Reactive Agent Group"], correct: 1, explanation: "RAG stands for Retrieval-Augmented Generation — combining knowledge retrieval with generative models." },
+                        { question: "What does RAG stand for?", options: ["Random Algorithm Generation", "Retrieval-Augmented Generation", "Recursive Action Grid", "Reactive Agent Group"], correct: 1, explanation: "RAG stands for Retrieval-Augmented Generation - combining knowledge retrieval with generative models." },
                         { question: "What problem does RAG primarily solve in LLMs?", options: ["Slow internet speeds", "Hallucinations and stale knowledge", "High electricity bills", "Small context windows"], correct: 1, explanation: "RAG reduces hallucinations by grounding responses in retrieved external knowledge." },
                         { question: "What type of database is commonly used for the retrieval component of RAG?", options: ["Relational SQL database", "Vector database", "Spreadsheet", "Blockchain"], correct: 1, explanation: "Vector databases store embeddings and enable efficient similarity search for RAG systems." },
                         { question: "When was the seminal RAG paper published?", options: ["2018", "2019", "2020", "2021"], correct: 2, explanation: "The RAG paper was published by Facebook AI Research in 2020." }
@@ -530,7 +530,7 @@ const learningData = {
                     ],
                     quiz: [
                         { question: "What is the primary goal of AI alignment?", options: ["Making AI faster", "Ensuring AI goals match human intentions", "Reducing AI costs", "Increasing AI memory"], correct: 1, explanation: "Alignment aims to ensure AI systems pursue goals that match human values and intentions." },
-                        { question: "What does RLHF stand for?", options: ["Random Learning from Human Feedback", "Reinforcement Learning from Human Feedback", "Recursive Linking of Human Files", "Real-time Learning of Human Functions"], correct: 1, explanation: "RLHF stands for Reinforcement Learning from Human Feedback — a key alignment technique." },
+                        { question: "What does RLHF stand for?", options: ["Random Learning from Human Feedback", "Reinforcement Learning from Human Feedback", "Recursive Linking of Human Files", "Real-time Learning of Human Functions"], correct: 1, explanation: "RLHF stands for Reinforcement Learning from Human Feedback - a key alignment technique." },
                         { question: "What is 'red-teaming' in AI safety?", options: ["Painting models red", "Adversarial testing to find failure modes", "A gaming tournament", "A marketing strategy"], correct: 1, explanation: "Red-teaming involves adversarial testing to discover vulnerabilities and harmful behaviors in AI systems." },
                         { question: "Which company introduced Constitutional AI?", options: ["OpenAI", "Anthropic", "Google", "Meta"], correct: 1, explanation: "Anthropic introduced Constitutional AI, using a written 'constitution' of principles to guide behavior." }
                     ],
@@ -666,43 +666,43 @@ function getLatestAINews() {
 }
 
 // ============================================
-// AI GLOSSARY — quick-reference terms
+// AI GLOSSARY - quick-reference terms
 // ============================================
 const aiGlossary = [
-    { term: "Artificial Intelligence", abbr: "AI", definition: "Broad field of building systems that perform tasks which typically require human intelligence — perception, reasoning, language, decision-making." },
+    { term: "Artificial Intelligence", abbr: "AI", definition: "Broad field of building systems that perform tasks which typically require human intelligence - perception, reasoning, language, decision-making." },
     { term: "Machine Learning", abbr: "ML", definition: "Subset of AI where systems learn patterns from data rather than being explicitly programmed." },
     { term: "Deep Learning", abbr: "DL", definition: "ML using multi-layer neural networks. Powers modern speech, vision, and language models." },
     { term: "Large Language Model", abbr: "LLM", definition: "Neural network trained on vast text corpora to predict and generate text, e.g. GPT, Claude, Llama." },
     { term: "Transformer", definition: "Neural network architecture built on self-attention; the foundation of nearly every modern LLM." },
     { term: "Attention", definition: "Mechanism by which a model weights different parts of its input when producing each output token." },
-    { term: "Token", definition: "Smallest unit a model reads — a sub-word piece. A typical English word is ~1.3 tokens." },
+    { term: "Token", definition: "Smallest unit a model reads - a sub-word piece. A typical English word is ~1.3 tokens." },
     { term: "Context Window", definition: "Maximum number of tokens a model can consider at once. Larger windows let models reason over more input." },
     { term: "Embedding", definition: "A dense numeric vector representing text (or other data) so that semantic similarity becomes geometric closeness." },
     { term: "Fine-tuning", definition: "Continuing training on a smaller, task-specific dataset to adapt a pretrained model." },
-    { term: "RLHF", abbr: "RLHF", definition: "Reinforcement Learning from Human Feedback — aligning model behaviour using human-ranked responses." },
+    { term: "RLHF", abbr: "RLHF", definition: "Reinforcement Learning from Human Feedback - aligning model behaviour using human-ranked responses." },
     { term: "Prompt Engineering", definition: "Crafting inputs (instructions, examples, structure) to steer model behaviour without changing weights." },
-    { term: "RAG", abbr: "RAG", definition: "Retrieval-Augmented Generation — fetching relevant documents at query time and feeding them into the prompt." },
-    { term: "Vector Database", definition: "Database optimised for similarity search over embeddings — the usual backing store for RAG systems." },
+    { term: "RAG", abbr: "RAG", definition: "Retrieval-Augmented Generation - fetching relevant documents at query time and feeding them into the prompt." },
+    { term: "Vector Database", definition: "Database optimised for similarity search over embeddings - the usual backing store for RAG systems." },
     { term: "Agent", definition: "An LLM-driven system that plans, calls tools, observes results, and iterates toward a goal." },
     { term: "Tool Use", definition: "Letting a model invoke external functions or APIs (search, code exec, calendars) mid-response." },
-    { term: "MoE", abbr: "MoE", definition: "Mixture of Experts — architecture that routes each token through a small subset of specialised sub-networks." },
+    { term: "MoE", abbr: "MoE", definition: "Mixture of Experts - architecture that routes each token through a small subset of specialised sub-networks." },
     { term: "Quantization", definition: "Compressing a model by reducing numeric precision (e.g. FP16 → INT4), trading quality for speed and memory." },
     { term: "Hallucination", definition: "When a model produces confident but factually wrong content not grounded in its inputs." },
     { term: "Alignment", definition: "The work of ensuring AI systems behave in line with human intent and values." },
-    { term: "Multimodal", definition: "Models that handle multiple input or output types — text, image, audio, video — in one system." },
+    { term: "Multimodal", definition: "Models that handle multiple input or output types - text, image, audio, video - in one system." },
     { term: "Temperature", definition: "Sampling parameter that controls randomness. Lower = more deterministic, higher = more creative." },
     { term: "Chain of Thought", abbr: "CoT", definition: "Prompting technique that asks the model to reason step-by-step before answering." },
     { term: "Zero-shot / Few-shot", definition: "Asking a model to do a task with no examples (zero-shot) or a handful of examples (few-shot) in the prompt." }
 ];
 
 // ============================================
-// AI UPDATES — what's trending in the field
+// AI UPDATES - what's trending in the field
 // ============================================
 const aiUpdates = [
     { date: "This year", title: "Million-token context", text: "Frontier models routinely handle 200K–2M token contexts, enabling entire-codebase and long-document reasoning in one shot." },
-    { date: "This year", title: "Agentic workflows go mainstream", text: "Tool-using, multi-step agents move from demos into production — browsers, coding, research, and ops automation." },
+    { date: "This year", title: "Agentic workflows go mainstream", text: "Tool-using, multi-step agents move from demos into production - browsers, coding, research, and ops automation." },
     { date: "This year", title: "Open-weight models close the gap", text: "Meta, Mistral, DeepSeek and others ship open-weight models competitive with closed frontier systems." },
-    { date: "Recent", title: "Reasoning models", text: "A new class of models trained to 'think' before answering — dramatically better on maths, code, and logic." },
+    { date: "Recent", title: "Reasoning models", text: "A new class of models trained to 'think' before answering - dramatically better on maths, code, and logic." },
     { date: "Recent", title: "Native multimodality", text: "Top models now accept text, images, audio, and video as first-class inputs rather than bolted-on adapters." },
     { date: "Ongoing", title: "On-device LLMs", text: "4-bit quantization and tiny-but-strong models (1B–8B) enable useful LLMs on phones and laptops without a cloud." }
 ];

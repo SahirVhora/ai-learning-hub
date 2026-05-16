@@ -1,6 +1,6 @@
 # AI Learning Hub
 
-A structured, curated learning platform for AI, LLMs, and agents — from first principles to cutting-edge research. **17 topics, 100+ vetted resources, 3 progressive paths.** No signup, no course drip, no fluff.
+A structured, curated learning platform for AI, LLMs, and agents - from first principles to cutting-edge research. **17 topics, 100+ vetted resources, 3 progressive paths.** No signup, no course drip, no fluff.
 
 **🌐 Live:** https://sahirvhora.github.io/ai-learning-hub/
 
@@ -15,16 +15,16 @@ A structured, curated learning platform for AI, LLMs, and agents — from first 
 Most "learn AI" pages are either hype or homework. This hub is a calm, structured map of the field with handpicked videos, papers, and tools at each step. Pick a level, work through topics in order, bookmark the resources that matter.
 
 ### Features
-- **3 learning paths** — Beginner, Intermediate, Expert
-- **17 topics** — from "What is AI?" through RAG, MoE, and emerging architectures
-- **100+ curated resources** — videos, papers, articles, interactive tools
+- **3 learning paths** - Beginner, Intermediate, Expert
+- **17 topics** - from "What is AI?" through RAG, MoE, and emerging architectures
+- **100+ curated resources** - videos, papers, articles, interactive tools
 - **Global search** across topics and resources (`/` to focus)
-- **AI glossary** — 24 essential terms, always one click away
-- **Progress tracking** — local only, nothing leaves your browser
-- **Bookmarks** — star resources to come back to
-- **Keyboard-first** — `←/→` navigate topics, `Esc` closes, `/` searches
-- **Accessible** — ARIA, skip link, keyboard nav, reduced-motion support
-- **Zero dependencies** — plain HTML/CSS/vanilla JS, loads instantly
+- **AI glossary** - 24 essential terms, always one click away
+- **Progress tracking** - local only, nothing leaves your browser
+- **Bookmarks** - star resources to come back to
+- **Keyboard-first** - `←/→` navigate topics, `Esc` closes, `/` searches
+- **Accessible** - ARIA, skip link, keyboard nav, reduced-motion support
+- **Zero dependencies** - plain HTML/CSS/vanilla JS, loads instantly
 
 ## Run locally
 
@@ -37,7 +37,7 @@ python3 -m http.server 8000
 # open http://localhost:8000
 ```
 
-Or just double-click `index.html` — it works offline too.
+Or just double-click `index.html` - it works offline too.
 
 ## Project structure
 
@@ -52,11 +52,11 @@ ai-learning-hub/
 
 ## Contributing
 
-Spotted a broken link? Found a better resource? Open an issue or a PR — `data.js` is the single source of truth for all content.
+Spotted a broken link? Found a better resource? Open an issue or a PR - `data.js` is the single source of truth for all content.
 
 ## License
 
-[MIT](./LICENSE) — free to use, fork, remix.
+[MIT](./LICENSE) - free to use, fork, remix.
 
 ## Content Review
 

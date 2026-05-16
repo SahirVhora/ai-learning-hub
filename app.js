@@ -223,7 +223,7 @@ function createTopicCard(topic, number) {
     card.className = 'topic-card';
     card.setAttribute('tabindex', '0');
     card.setAttribute('role', 'button');
-    card.setAttribute('aria-label', `${topic.title} — ${topic.duration}`);
+    card.setAttribute('aria-label', `${topic.title} - ${topic.duration}`);
     if (completedTopics.has(topic.id)) card.classList.add('topic-completed');
     card.innerHTML = `
         <div class="topic-number">Topic ${number}</div>
@@ -776,7 +776,7 @@ function renderStudyPlan() {
             : 'var(--text-muted)';
 
         html += `
-            <div class="sp-row" onclick="jumpToTopic('${item.level}','${item.topic.id}')" onkeydown="if(event.key==='Enter'||event.key===' ')jumpToTopic('${item.level}','${item.topic.id}')" tabindex="0" role="button" aria-label="${escapeHtml(item.topic.title)} — ${priorityLabel}">
+            <div class="sp-row" onclick="jumpToTopic('${item.level}','${item.topic.id}')" onkeydown="if(event.key==='Enter'||event.key===' ')jumpToTopic('${item.level}','${item.topic.id}')" tabindex="0" role="button" aria-label="${escapeHtml(item.topic.title)} - ${priorityLabel}">
                 <div class="sp-rank">${rankEmoji}</div>
                 <div class="sp-main">
                     <div class="sp-header">
@@ -920,7 +920,7 @@ function renderLeaderboard() {
                         <div class="lb-bar-wrap"><div class="lb-bar lb-bar-empty"></div><div class="lb-bar-avg-marker" style="left:${avg}%"></div></div>
                         <div class="lb-compare-muted">Community avg: ${avg}%</div>
                     </div>
-                    <div class="lb-row-score">—</div>
+                    <div class="lb-row-score"> - </div>
                     <div class="lb-row-detail">${t.total} Qs</div>
                 </div>
             `;
