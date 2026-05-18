@@ -383,7 +383,7 @@ const learningData = {
                     resources: [
                         { type: "Model", name: "Hermes on Hugging Face", url: "https://huggingface.co/NousResearch", provider: "Hugging Face" },
                         { type: "Guide", name: "Running Hermes Locally", url: "https://ollama.com/", provider: "Ollama" },
-                        { type: "Article", name: "Understanding Model Fine-tuning", url: "https://huggingface.co/learn/llm-course/en/chapter11/fine_tuning_llms", provider: "Hugging Face" },
+                        { type: "Article", name: "Understanding Model Fine-tuning", url: "https://huggingface.co/learn/llm-course/en/chapter5/fine-tuning", provider: "Hugging Face" },
                         { type: "Comparison", name: "LLM Leaderboard", url: "https://huggingface.co/spaces/lmarena-ai/arena-leaderboard", provider: "Hugging Face" }
                     ],
                     quiz: [
