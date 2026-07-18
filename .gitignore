@@ -17,3 +17,7 @@ node_modules/
 # Local env
 .env
 .env.local
+
+.audit-result.json
+.claude/settings.local.json
+.under-anything/
