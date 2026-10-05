@@ -36,6 +36,8 @@ jobs:
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
-          args: --no-progress --max-concurrency 4 --timeout 20 --max-redirects 5 --exclude '^http://localhost(:[0-9]+)?(/.*)?$' --exclude '^https://claude\.ai' --exclude '^https://www\.alignmentforum\.org' --exclude '^https://www\.youtube\.com/results\?' --exclude '^https://huggingface\.co' --exclude '^https://www\.deeplearning\.ai' urls.txt
+          # PromptBase returns 403 to GitHub runners; homepage verified 2026-10-05.
+          # Exclude only this URL; keep failures enabled for every other checked link.
+          args: --no-progress --max-concurrency 4 --timeout 20 --max-redirects 5 --exclude '^http://localhost(:[0-9]+)?(/.*)?$' --exclude '^https://claude\.ai' --exclude '^https://www\.alignmentforum\.org' --exclude '^https://www\.youtube\.com/results\?' --exclude '^https://huggingface\.co' --exclude '^https://www\.deeplearning\.ai' --exclude '^https://promptbase\.com/$' urls.txt
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
