@@ -9,9 +9,13 @@ on:
   schedule:
     - cron: "0 8 * * 1"
 
+permissions:
+  contents: read
+
 jobs:
   link-check:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
@@ -33,11 +37,34 @@ jobs:
           sort -u -o urls.txt urls.txt
           cat urls.txt
       - name: Check URLs
+        id: lychee
         if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
         uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2
         with:
-          # PromptBase returns 403 to GitHub runners; homepage verified 2026-10-05.
-          # Exclude only this URL; keep failures enabled for every other checked link.
-          args: --no-progress --max-concurrency 4 --timeout 20 --max-redirects 5 --exclude '^http://localhost(:[0-9]+)?(/.*)?$' --exclude '^https://claude\.ai' --exclude '^https://www\.alignmentforum\.org' --exclude '^https://www\.youtube\.com/results\?' --exclude '^https://huggingface\.co' --exclude '^https://www\.deeplearning\.ai' --exclude '^https://promptbase\.com/$' urls.txt
+          # Bot-mitigation responses (403 Forbidden, 429 Too Many Requests) are not
+          # broken links — they are large hosts rejecting GitHub runner IPs. Treating
+          # them as failures made this weekly job flap (passed 21 Sep, failed 14/28 Sep
+          # and 5/12 Oct on an unchanged URL list) and drove a growing list of
+          # per-host excludes. Accept them globally, present a real browser UA, and
+          # retry transient failures instead. Genuine breakage (404, 410, 5xx, DNS
+          # failure, TLS failure, timeout) still fails the run.
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --timeout 30
+            --max-retries 5
+            --retry-wait-time 10
+            --max-redirects 5
+            --accept 200..=299,403,429
+            --user-agent "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+            --exclude '^http://localhost(:[0-9]+)?(/.*)?$'
+            --exclude '^https://www\.youtube\.com/results\?'
+            urls.txt
+          output: lychee-report.md
+          # jobSummary writes the failing-URL report into the run's summary page,
+          # so a red run can be diagnosed without downloading logs.
+          jobSummary: true
+          format: markdown
+          fail: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
